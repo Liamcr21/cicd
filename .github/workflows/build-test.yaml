@@ -26,7 +26,7 @@ jobs:
     container: cypress/browsers:node16.16.0-chrome107-ff107-edge
     strategy:
       matrix:
-        browser: ['chrome' , 'firefox']
+        browser: ['chrome', 'edge']
     # needs: build
     steps:
       - uses: actions/checkout@v3
@@ -48,7 +48,7 @@ jobs:
       - name: Save video folder
         uses: actions/upload-artifact@v3
         with:
-          name: Test videos
+          name: Test videos ${{ matrix.browser }}
           path: |
             cypress/videos
             cypress/screenshots
