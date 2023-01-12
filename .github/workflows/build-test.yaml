@@ -1,7 +1,9 @@
-name: Build & Test 
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Build & test
+
 on: [push]
+
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
